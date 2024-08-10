@@ -17,7 +17,7 @@ export const TrackVisit = async () => {
     const response = await axios.post(BASE_URL + "/device-logs/log-visit", {
       deviceType: deviceType,
     });
-    console.log("Visit Log:", response.data);
+    //console.log("Visit Log:", response.data);
   } catch (error) {
     console.error("Failed to log visit:", error);
   }

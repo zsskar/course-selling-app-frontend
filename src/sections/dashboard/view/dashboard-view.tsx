@@ -72,7 +72,7 @@ export default function AppView() {
 
   const fetchSiteVisits = async (user: UserCredentials, token: string) => {
     const response = await getSiteVisits(user, token);
-    console.log("visits:", response.data.visits);
+    //console.log("visits:", response.data.visits);
     setVisits(response?.data?.visits);
   };
 
@@ -80,7 +80,7 @@ export default function AppView() {
     setLoading(true);
     try {
       const response = await fetchDashboardAnalytics(user, token);
-      console.log("analytics:", response);
+      //console.log("analytics:", response);
       setAnalytics(response.data.dashboard);
       if (path && user.role === "user") {
         loadCourses();
@@ -108,7 +108,7 @@ export default function AppView() {
           true
         );
         setCourses(coursesList);
-        console.log("coursesList: ", coursesList);
+        //console.log("coursesList: ", coursesList);
         setOpen(true);
       } catch (error) {
         setOpenError(true);
@@ -121,7 +121,7 @@ export default function AppView() {
   const getUserAndToken = () => {
     const userDetails = getUserDetails();
     if (userDetails) {
-      console.log("In Dashboard", userDetails);
+      //console.log("In Dashboard", userDetails);
       const [user, token] = userDetails;
       setUserData(user);
       setTokenData(token);
@@ -154,7 +154,7 @@ export default function AppView() {
   }, [visits]);
 
   // useEffect(() => {
-  //   console.log("analytics:", analytics);
+  //   //console.log("analytics:", analytics);
   // }, [analytics]);
 
   const closeOpen = (event?: React.SyntheticEvent | Event, reason?: string) => {

@@ -87,7 +87,7 @@ export default function MakeRefundRequest() {
   const fetchPurchasedCourses = async () => {
     try {
       const response = await fetchCourses("dashboard", user, token, true);
-      console.log(response);
+      //console.log(response);
       setCourses(response);
       setLoading(false);
       setType("success");
@@ -104,7 +104,7 @@ export default function MakeRefundRequest() {
   const fetchRequests = async () => {
     try {
       const response = await findRefundRequestForUser(user, token);
-      console.log(response);
+      //console.log(response);
       setRefunds(response.data.refundRequests);
       setLoading(false);
       setType("success");

@@ -74,8 +74,8 @@ const fetchCoursesResponse = async (
       }
     }
   } else {
-    console.log("Not dashboard");
-    console.log();
+    //console.log("Not dashboard");
+    //console.log();
 
     const response = await axios.get(BASE_URL + "/user/courses");
     return response.data.courses;
@@ -96,7 +96,7 @@ export const fetchCourses = async (
   token: string | undefined,
   isPurchased: boolean
 ) => {
-  // console.log("Path: " + path + " and role: " + role + " token: " + token);
+  // //console.log("Path: " + path + " and role: " + role + " token: " + token);
 
   // if (path === "dashboard" && user.role === "admin") {
   //   return fetchCoursesResponse(path, user, token, isPurchased);
@@ -107,7 +107,7 @@ export const fetchCourses = async (
 
 export const signUp = async (user: UserCredentials) => {
   const response = await axios.post(BASE_URL + "/user/signup", user);
-  console.log(response);
+  //console.log(response);
   return response;
 };
 
@@ -122,7 +122,7 @@ const adminLogin = async (
         password: user.password,
       }
     );
-    console.log("response", response);
+    //console.log("response", response);
     return {
       data: response.data,
       status: response.status,
@@ -133,7 +133,7 @@ const adminLogin = async (
     };
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      console.log("Axios error:", error);
+      //console.log("Axios error:", error);
       return {
         response: error.response,
         request: error.request,
@@ -142,7 +142,7 @@ const adminLogin = async (
         code: error.code,
       };
     } else {
-      console.log("Unexpected error:", error);
+      //console.log("Unexpected error:", error);
       throw error;
     }
   }
@@ -159,7 +159,7 @@ const userLogin = async (
         password: user.password,
       }
     );
-    console.log("response", response);
+    //console.log("response", response);
     return {
       data: response.data,
       status: response.status,
@@ -170,7 +170,7 @@ const userLogin = async (
     };
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      console.log("Axios error:", error);
+      //console.log("Axios error:", error);
       return {
         response: error.response,
         request: error.request,
@@ -179,7 +179,7 @@ const userLogin = async (
         code: error.code,
       };
     } else {
-      console.log("Unexpected error:", error);
+      //console.log("Unexpected error:", error);
       throw error;
     }
   }
@@ -209,13 +209,13 @@ export const purchaseCourse = async (
       },
     }
   );
-  console.log("response", response);
+  //console.log("response", response);
   return response;
 };
 
 export const getSiteVisits = async (user: UserCredentials, token: string) => {
-  // console.log(user, "inside getSiteVisits");
-  // console.log(token, "inside getSiteVisits");
+  // //console.log(user, "inside getSiteVisits");
+  // //console.log(token, "inside getSiteVisits");
 
   try {
     const response = await axios.get(BASE_URL + "/device-logs/last10Days", {
@@ -224,7 +224,7 @@ export const getSiteVisits = async (user: UserCredentials, token: string) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    // console.log("response", response);
+    // //console.log("response", response);
     return response;
   } catch (error) {
     console.error("Error fetching device logs:", error);
@@ -248,7 +248,7 @@ export const fetchDashboardAnalytics = async (
       Authorization: `Bearer ${token}`,
     },
   });
-  // console.log("response", response);
+  // //console.log("response", response);
   return response;
 };
 
@@ -258,7 +258,7 @@ export const createCourse = async (course, token: string) => {
       Authorization: `Bearer ${token}`,
     },
   });
-  // console.log("response", response);
+  // //console.log("response", response);
   return response;
 };
 
@@ -272,7 +272,7 @@ export const updateCourse = async (course, token: string, courseId: string) => {
       },
     }
   );
-  // console.log("response", response);
+  // //console.log("response", response);
   return response;
 };
 
@@ -282,7 +282,7 @@ export const courseById = async (courseId: string, token: string) => {
       Authorization: `Bearer ${token}`,
     },
   });
-  // console.log("response", response);
+  // //console.log("response", response);
   return response;
 };
 
@@ -297,7 +297,7 @@ export const makeRefundRequest = async (course, user, token: string) => {
       },
     }
   );
-  // console.log("response", response);
+  // //console.log("response", response);
   return response;
 };
 
@@ -308,7 +308,7 @@ export const findRefundRequestForUser = async (user, token: string) => {
       Authorization: `Bearer ${token}`,
     },
   });
-  // console.log("response", response);
+  // //console.log("response", response);
   return response;
 };
 
@@ -318,7 +318,7 @@ export const findRefundRequestForAdmin = async (token: string) => {
       Authorization: `Bearer ${token}`,
     },
   });
-  // console.log("response", response);
+  // //console.log("response", response);
   return response;
 };
 
@@ -341,7 +341,7 @@ export const approveOrRejectRefundRequest = async (
       },
     }
   );
-  // console.log("response", response);
+  // //console.log("response", response);
   return response;
 };
 

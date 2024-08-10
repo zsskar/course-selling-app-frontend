@@ -47,7 +47,7 @@ export const ShopProductCard = ({ product, isPurchased }) => {
       setToken(token);
     }
   }, []);
-  // console.log(path);
+  // //console.log(path);
 
   const handleClickOpen = () => {
     setOpen(true);

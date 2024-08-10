@@ -115,7 +115,7 @@ export const Students = () => {
   };
 
   const handleInfoClick = (purchaseCourses: []) => {
-    console.log("handleInfoClick", purchaseCourses);
+    //console.log("handleInfoClick", purchaseCourses);
 
     setpurchasedCourses(purchaseCourses);
     setInfoDialogOpen(true);
@@ -128,7 +128,7 @@ export const Students = () => {
   const getAllStudents = async () => {
     try {
       const response = await allStudents(token);
-      console.log("Students :", response);
+      //console.log("Students :", response);
 
       if (response?.data?.data === "no students found.") {
         setMsg("No Students found.");

@@ -32,7 +32,7 @@ export default function ProductsView({ isDashboard, isPurchased }) {
   // const [user, setUser] = useState<UserCredentials>();
 
   const path: string = pathname.split("/")[1];
-  console.log("products view" + path);
+  //console.log("products view" + path);
 
   // const handleOpenFilter = () => {
   //   setOpenFilter(true);
@@ -63,7 +63,7 @@ export default function ProductsView({ isDashboard, isPurchased }) {
     if (userDetails) {
       const [, token] = userDetails;
       // setUser(user);
-      // console.log("In products view :", user);
+      // //console.log("In products view :", user);
 
       return token;
     }
@@ -114,7 +114,7 @@ export default function ProductsView({ isDashboard, isPurchased }) {
     setTimeout(() => {
       loadCourses(path, getUser(), getToken());
     }, 300);
-    console.log("User:", getUser());
+    //console.log("User:", getUser());
   }, []);
 
   const closeOpen = (event?: React.SyntheticEvent | Event, reason?: string) => {

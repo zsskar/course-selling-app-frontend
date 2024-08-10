@@ -47,7 +47,7 @@ export const ViewCourse = ({
   user,
   isPurchased,
 }) => {
-  //   console.log(course);
+  //   //console.log(course);
   const { pathname } = useLocation();
   const path: string = pathname.split("/")[1];
   const navigate = useNavigate();

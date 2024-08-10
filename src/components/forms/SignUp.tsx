@@ -43,7 +43,7 @@ export const SignUp = () => {
     user: UserCredentials,
     actions: FormikHelpers<UserCredentials>
   ) => {
-    console.log("signup :", user);
+    //console.log("signup :", user);
     setIsLoading(true);
     setTimeout(async () => {
       const response = await signUp(user);

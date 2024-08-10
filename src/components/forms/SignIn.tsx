@@ -48,7 +48,7 @@ export const SignIn = () => {
     setIsLoading(true);
 
     const response = await logIn(user);
-    console.log("login:", response);
+    //console.log("login:", response);
     if ("status" in response) {
       setMessage("Login successful!");
       setSeverity("success");
@@ -59,7 +59,7 @@ export const SignIn = () => {
         new Date().getTime() + response.data.tokenTime * 1000;
       localStorage.setItem("expirationTime", expirationTime.toString());
       setLogoutTimer(response.data.tokenTime * 1000);
-      // console.log("Login successful:", response);
+      // //console.log("Login successful:", response);
       setTimeout(() => {
         navigate("/dashboard");
       }, 700);
@@ -71,14 +71,14 @@ export const SignIn = () => {
         setMessage("Something went wrong !");
         setSeverity("error");
       }
-      // console.log("Login error:", response.response?.data.message);
+      // //console.log("Login error:", response.response?.data.message);
     }
     setOpen(true);
     setIsLoading(false);
   };
 
   const setLogoutTimer = (duration: number) => {
-    console.log("setLogoutTimer", duration);
+    //console.log("setLogoutTimer", duration);
     setTimeout(() => {
       logout();
     }, duration);

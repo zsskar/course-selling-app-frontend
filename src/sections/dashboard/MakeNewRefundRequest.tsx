@@ -50,7 +50,7 @@ function NestedListItem({
     setLoading(true);
     try {
       const response = await makeRefundRequest(course, user, token);
-      console.log(response);
+      //console.log(response);
       setMsg("Refund request submitted successfully.");
       setSeverity("success");
       setLoading(false);
@@ -71,8 +71,8 @@ function NestedListItem({
       navigate("/signin");
     } else {
       const today = new Date();
-      console.log(today);
-      console.log("purchase date", date);
+      //console.log(today);
+      //console.log("purchase date", date);
       const givenDate = parseISO(date);
       const days = differenceInDays(today, givenDate);
       if (days > 7) {
@@ -178,7 +178,7 @@ export const MakeNewRefundRequest = ({
   refreshCourses,
   page,
 }) => {
-  console.log("Refunding: ", refunds);
+  //console.log("Refunding: ", refunds);
 
   const filterCourses = () => {
     if (page === "new") {
@@ -207,7 +207,7 @@ export const MakeNewRefundRequest = ({
             return null;
           })
           .filter((course) => course !== null);
-        console.log(pendingC);
+        //console.log(pendingC);
         return pendingC;
       } else return [];
     } else if (page === "approved") {
@@ -229,7 +229,7 @@ export const MakeNewRefundRequest = ({
             return null;
           })
           .filter((course) => course !== null);
-        console.log(appovedC);
+        //console.log(appovedC);
         return appovedC;
       } else return [];
     } else {
@@ -251,7 +251,7 @@ export const MakeNewRefundRequest = ({
             return null;
           })
           .filter((course) => course !== null);
-        console.log(rejectedC);
+        //console.log(rejectedC);
         return rejectedC;
       } else return [];
     }

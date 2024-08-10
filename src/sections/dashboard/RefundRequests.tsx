@@ -36,7 +36,7 @@ function createData(
   totalRequests: number,
   requests
 ) {
-  // console.log("createData: ", requests);
+  // //console.log("createData: ", requests);
 
   return {
     from,
@@ -97,7 +97,7 @@ export default function RefundRequests() {
   const fetchRequests = async () => {
     try {
       const response = await findRefundRequestForAdmin(token);
-      //console.log("Admin :", response);
+      ////console.log("Admin :", response);
       if (response.data && response.data.requests) {
         setRefunds(response?.data?.requests);
         const newRows = response.data.requests.map((request) =>
@@ -260,7 +260,7 @@ const Row: React.FC<RowProps> = ({ row, refreshData }) => {
   const [type, setType] = useState("success");
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
-  // console.log("Row :", row);
+  // //console.log("Row :", row);
 
   useEffect(() => {
     const userDetails = getUserDetails();
@@ -313,7 +313,7 @@ const Row: React.FC<RowProps> = ({ row, refreshData }) => {
         );
         setSnackBar(true);
       } catch (error) {
-        // console.log(error);
+        // //console.log(error);
         setLoading(false);
         setType("success");
         setMsg("Error while updating request.");

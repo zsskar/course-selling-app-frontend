@@ -12,15 +12,14 @@ export const getUserDetails = (): [UserCredentials, string] | null => {
       if (parsedUser) {
         return [parsedUser, parsedToken];
       } else {
-        console.log(parsedUser, parsedToken);
-
-        console.log("No valid user data found");
+        //console.log(parsedUser, parsedToken);
+        //console.log("No valid user data found");
       }
     } catch (error) {
       console.error("Failed to parse user data:", error);
     }
   } else {
-    console.log("No user data found in localStorage");
+    //console.log("No user data found in localStorage");
   }
 
   return null;

@@ -191,7 +191,7 @@ function NavItem({ item }) {
   const pathname = usePathname();
 
   const active = item.path === pathname;
-  console.log(item.path);
+  //console.log(item.path);
 
   return (
     <ListItemButton

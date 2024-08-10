@@ -68,7 +68,7 @@ export const BuyCourse = ({
         setOpenSnackbar(false);
       }, 800);
     } else {
-      console.log(`Applying coupon: ${coupon}`);
+      //console.log(`Applying coupon: ${coupon}`);
       setCoupon("100xDevs");
       setSeverity("success");
       setMessage("Coupon applied successfully.");
@@ -97,7 +97,7 @@ export const BuyCourse = ({
     setTimeout(async () => {
       try {
         const response = await purchaseCourse(course._id, user, token);
-        console.log("Purchase: ", response);
+        //console.log("Purchase: ", response);
         setSeverity("success");
         setMessage("Course purchases successfully.");
         setOpenSnackbar(true);
@@ -105,7 +105,7 @@ export const BuyCourse = ({
           navigate("/dashboard/purchases");
         }, 500);
       } catch (error) {
-        console.log(error);
+        //console.log(error);
       } finally {
         setLoading(false);
       }

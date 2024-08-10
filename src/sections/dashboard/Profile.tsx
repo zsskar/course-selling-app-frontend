@@ -76,7 +76,7 @@ const Profile = () => {
   }, []);
 
   useEffect(() => {
-    console.log("Profile user :", user);
+    //console.log("Profile user :", user);
   }, [user, token]);
 
   const handleTabChange = (event, newValue) => {
@@ -102,9 +102,9 @@ const Profile = () => {
       navigate("/signin");
     } else {
       try {
-        console.log("checkExistedEmail :", newUser.email);
+        //console.log("checkExistedEmail :", newUser.email);
         const response = await checkEmail(token, newUser.email);
-        console.log(response);
+        //console.log(response);
         if (response && response?.data?.message == "F") {
           setType("info");
           setMsg("Email aleady exists.");
@@ -123,7 +123,7 @@ const Profile = () => {
   };
 
   const updateUser = async (newUser, msg) => {
-    // console.log(newUser);
+    // //console.log(newUser);
     if (!isTokenValid()) {
       localStorage.clear();
       // localStorage.setItem("expired", "true");
@@ -131,9 +131,9 @@ const Profile = () => {
     } else {
       try {
         setLoading(true);
-        console.log("updateUser :", newUser._id);
+        //console.log("updateUser :", newUser._id);
         const response = await updateAccount(newUser._id, newUser, token);
-        console.log(response);
+        //console.log(response);
         if (response) {
           setType("success");
           setMsg(
@@ -168,17 +168,17 @@ const Profile = () => {
     enableReinitialize: true,
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      console.log(values);
+      //console.log(values);
       const changedUser = values;
       const changes = Object.keys(changedUser).some(
         (key) => changedUser[key] !== user[key]
       );
       if (changes) {
-        console.log("Form values changed:", changedUser);
+        //console.log("Form values changed:", changedUser);
         setLoading(true);
         checkExistedEmail(changedUser);
       } else {
-        console.log("No changes detected.");
+        //console.log("No changes detected.");
         setType("info");
         setMsg("No changes found.");
         setSnackBar(true);

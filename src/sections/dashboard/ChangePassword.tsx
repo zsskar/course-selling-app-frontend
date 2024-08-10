@@ -46,7 +46,7 @@ const ChangePassword = ({
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      console.log("Change Password Values:", values);
+      //console.log("Change Password Values:", values);
       const changedUser = values;
       if (changedUser.currentPassword !== user.password) {
         setType("error");
@@ -58,7 +58,7 @@ const ChangePassword = ({
         setSnackBar(true);
       } else {
         user.password = changedUser.newPassword;
-        console.log("changed password :", changedUser, "-", user);
+        //console.log("changed password :", changedUser, "-", user);
         updateTheUser(user, "Password");
       }
     },

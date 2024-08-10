@@ -96,8 +96,8 @@ const CommonCourseForm: React.FC = () => {
   const formikRef = useRef<FormikProps<CourseFormValues>>(null);
   const navigate = useNavigate();
 
-  console.log("Pathname: ", pathname);
-  console.log("path: ", path);
+  //console.log("Pathname: ", pathname);
+  //console.log("path: ", path);
 
   const setUserDetails = () => {
     const userDetails = getUserDetails();
@@ -121,7 +121,7 @@ const CommonCourseForm: React.FC = () => {
         setSeverity("success");
         setMsg("Course details fetched successfully.");
         setOpen(true);
-        console.log(response);
+        //console.log(response);
       } catch (e) {
         setSeverity("error");
         setMsg("Error while fetching course details.");
@@ -174,7 +174,7 @@ const CommonCourseForm: React.FC = () => {
   const updateACourse = async (values) => {
     try {
       const response = await updateCourse(values, token, courseId);
-      console.log("update course: ", response);
+      //console.log("update course: ", response);
       setSeverity("success");
       setMsg("Course updated successfully.");
       setOpen(true);
@@ -191,7 +191,7 @@ const CommonCourseForm: React.FC = () => {
   const createACourse = async (values) => {
     try {
       const response = await createCourse(values, token);
-      console.log("Create course: ", response);
+      //console.log("Create course: ", response);
       setSeverity("success");
       setMsg("Course created successfully.");
       setOpen(true);
@@ -207,7 +207,7 @@ const CommonCourseForm: React.FC = () => {
   };
 
   const handleSubmit = (values: CourseFormValues) => {
-    console.log(values);
+    //console.log(values);
 
     if (!isTokenValid()) {
       localStorage.clear();
