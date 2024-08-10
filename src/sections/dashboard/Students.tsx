@@ -130,29 +130,34 @@ export const Students = () => {
       const response = await allStudents(token);
       console.log("Students :", response);
 
-      setStudents(response?.data?.data);
-      const fetchedRows: Data[] = response?.data?.data.map((item) =>
-        createData(
-          item._id,
-          item.firstName,
-          item.lastName,
-          item.email,
-          fCustomDateTime(item.createdDate),
-          fCustomDateTime(item.lastLogin),
-          item.purchasedCourses.length,
-          item.purchasedCourses
-        )
-      );
+      if (response?.data?.data === "no students found.") {
+        setMsg("No Students found.");
+      } else {
+        setStudents(response?.data?.data);
+        const fetchedRows: Data[] = response?.data?.data.map((item) =>
+          createData(
+            item._id,
+            item.firstName,
+            item.lastName,
+            item.email,
+            fCustomDateTime(item.createdDate),
+            fCustomDateTime(item.lastLogin),
+            item.purchasedCourses.length,
+            item.purchasedCourses
+          )
+        );
+
+        setRows(fetchedRows);
+        setMsg("Students data fetched successfully.");
+      }
       setType("success");
-      setRows(fetchedRows);
-      setLoading(false);
-      setMsg("Students data fetched successfully.");
       setSnackBar(true);
     } catch (error) {
-      setLoading(false);
       setType("error");
       setMsg("Error fetching students data.");
       setSnackBar(true);
+    } finally {
+      setLoading(false);
     }
   };
 
