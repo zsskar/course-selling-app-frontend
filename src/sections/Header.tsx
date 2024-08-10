@@ -46,7 +46,11 @@ export const Header = (props: Props) => {
       <List>
         {[...navItems.entries()].map(([key, value]) => (
           <ListItem key={key} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemButton
+              component={Link}
+              to={value}
+              sx={{ textAlign: "center" }}
+            >
               <ListItemText primary={key} />
             </ListItemButton>
           </ListItem>

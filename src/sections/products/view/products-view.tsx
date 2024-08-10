@@ -158,17 +158,17 @@ export default function ProductsView({ isDashboard, isPurchased }) {
           </Typography>
           <Stack direction="row" spacing={1} flexShrink={0} sx={{ my: 1 }}>
             {/* <ProductFilters
-                openFilter={openFilter}
-                onOpenFilter={handleOpenFilter}
-                onCloseFilter={handleCloseFilter}
-              />
+            openFilter={openFilter}
+            onOpenFilter={handleOpenFilter}
+            onCloseFilter={handleCloseFilter}
+          />
 
-              <ProductSort /> */}
+          <ProductSort /> */}
           </Stack>
         </Stack>
 
         <Grid container spacing={2}>
-          {isPurchased && courses.length == 0 ? (
+          {isPurchased && courses.length === 0 ? (
             <Box
               display="flex"
               justifyContent="center"
@@ -181,7 +181,7 @@ export default function ProductsView({ isDashboard, isPurchased }) {
                 No purchased courses.
               </Typography>
             </Box>
-          ) : !isPurchased && courses.length == 0 ? (
+          ) : !isPurchased && courses.length === 0 ? (
             <Box
               display="flex"
               justifyContent="center"
@@ -196,7 +196,14 @@ export default function ProductsView({ isDashboard, isPurchased }) {
           ) : (
             courses.length > 0 &&
             courses.map((course) => (
-              <Grid key={course._id} xs={10} sm={6} md={isDashboard ? 3 : 4}>
+              <Grid
+                key={course._id}
+                xs={12}
+                sm={6}
+                md={isDashboard ? 3 : 4}
+                display="flex"
+                justifyContent="center"
+              >
                 <ShopProductCard product={course} isPurchased={isPurchased} />
               </Grid>
             ))

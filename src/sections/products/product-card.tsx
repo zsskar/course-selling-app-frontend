@@ -155,8 +155,6 @@ export const ShopProductCard = ({ product, isPurchased }) => {
     </Typography>
   );
 
-  const checked = true; // Replace with your logic for checked
-
   return (
     <>
       {/* <Grow
@@ -192,7 +190,7 @@ export const ShopProductCard = ({ product, isPurchased }) => {
               textAlign: "left",
               width: "100%",
               cursor: "default",
-            }} // Center align the link
+            }}
           >
             <Typography
               component="span"
